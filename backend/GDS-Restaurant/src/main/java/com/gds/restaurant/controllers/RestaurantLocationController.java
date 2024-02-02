@@ -23,7 +23,6 @@ public class RestaurantLocationController {
 	@Autowired
 	private RestaurantLocationService restaurantLocationService;
 	
-	
 	  /**
      * Endpoint to retrieve a random restaurant location based on the provided criteria.
      *

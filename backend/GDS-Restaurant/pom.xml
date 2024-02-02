@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.gds</groupId>
 	<artifactId>GDS-Restaurant</artifactId>
-	<version>1</version>
+	<version>v2</version>
 	<name>GDS-Restaurant</name>
 	<description>mini project </description>
 	<properties>

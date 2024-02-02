@@ -46,7 +46,7 @@ public class RestaurantLocationServiceImpl implements RestaurantLocationService 
 		}else if(!reqDto.getCategory().isBlank()) {	
 			listOfLocation = restaurantDao.findByCategory(reqDto.getCategory());
 		}else if(!reqDto.getArea().isBlank()) {
-			listOfLocation = restaurantDao.findByArea(reqDto.getCategory());
+			listOfLocation = restaurantDao.findByArea(reqDto.getArea());
 		}else {
 			listOfLocation = restaurantDao.findAll();
 		}
