@@ -83,7 +83,7 @@ public class CorsConfig implements WebMvcConfigurer {
 ##### DatabaseSeederConfig
 The DatabaseSeederConfig is used to populate the in-memory database 
 
-```
+```DatabaseSeederConfig.java
 /**
  * Configuration to Seed the H2 memory database. 
  * */
