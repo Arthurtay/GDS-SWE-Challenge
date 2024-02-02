@@ -20,13 +20,13 @@ The objective of this project is to develop a random restaurant finder, utilizin
 
 ### Running the application
 
-1. To run the API, you can use the following command for the already-built JAR:
+1. To run the API, run the following command for the already-built JAR:
 ```
 java -jar GDS-Restaurant-v2.jar
 ```
-Alternatively, if you are running the backend application as a Spring Boot application from your IDE, ensure the backend is ready.
+Alternatively, running the backend application as a Spring Boot application from your IDE is possible
 
-Once the backend is set up, go to the ../frontend/restaurant-finder directory and run the following command to start the react application:
+Once the backend is set up, proceed to ../frontend/restaurant-finder directory and run the following command to start the react application:
 ```
   npm start
 ```
