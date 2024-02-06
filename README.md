@@ -44,7 +44,7 @@ Controller for handling restaurant location-related requests.
 
 #### `GET http://localhost:9090/restaurant/{name}`
 
-Endpoint to retrieve a specific or Similar restaurant location based on the shopname.
+Endpoint to retrieve a specific or similar restaurant location based on the shop name.
 
 ##### Request
 
