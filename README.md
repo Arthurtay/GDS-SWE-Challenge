@@ -1,11 +1,11 @@
 # GDS-SWE-Challenge
 
 ## Video Demo
-https://youtu.be/bqQCJDsaN08
+https://youtu.be/VS7InwGWH34
 
 ## Overview
 
-The objective of this project is to develop a random restaurant finder, utilizing the React JavaScript framework and the Material-UI library for the frontend. The backend is powered by a Java Spring Boot REST API, while using an in-memory H2 database with pre-configured with seeder data within the application.
+The objective of this project is to develop a random restaurant finder, utilizing the React JavaScript framework and the Material-UI library for the frontend. The backend is powered by a Java Spring Boot REST API, while using an in-memory H2 database with pre-configured seeder data within the application.
 
 ## How to Run
 
@@ -39,16 +39,46 @@ The API would be hosted in localhost port 9090.
 
 Controller for handling restaurant location-related requests.
 
-### Get Restaurant Endpoint
 
-#### `POST http://localhost:9090/restaurant/get`
+### 1. Search Restaurant Endpoint
+
+#### `GET http://localhost:9090/restaurant/{name}`
+
+Endpoint to retrieve a specific or Similar restaurant location based on the shopname.
+
+##### Request
+
+- **Method:** `GET`
+- **Path:** `/restaurant/{name}`
+
+##### Path Variable
+
+- **name**: The name variable specifies the shop name for filtering similar or specific restaurant.
+
+##### Response Body
+```json
+{
+    "shopName": "Joe & Dough",
+    "address": "5 Straits View #B2-12, 018935 Local Cit Singapore",
+    "postalCode": "18935",
+    "category": "Chinese",
+    "lat": 1.2774589,
+    "lng": 103.8529889,
+    "area": "Orchard"
+}
+```
+
+
+### 2. Random Restaurant Endpoint
+
+#### `POST http://localhost:9090/restaurant/random`
 
 Endpoint to retrieve a random restaurant location based on the provided criteria.
 
 ##### Request
 
 - **Method:** `POST`
-- **Path:** `/restaurant/get`
+- **Path:** `/restaurant/random`
 
 ##### Request Body
 
@@ -76,7 +106,7 @@ Endpoint to retrieve a random restaurant location based on the provided criteria
 
 #### CorsConfig
 
-This configuration, CorsConfig, is designed to handle Cross-Origin Resource Sharing (CORS). Given that the client's location host port can vary, and there is no fixed origin, this configuration allows requests from any origin for the /restaurant/** endpoint. Specifically, only POST requests are permitted, ensuring secure interaction with the API while accommodating a variety of client origins."
+This configuration, CorsConfig, is designed to handle Cross-Origin Resource Sharing (CORS). Given that the client's location host port can vary, and there is no fixed origin, this configuration allows requests from any origin for the /restaurant/** endpoint. Specifically, only GET and POST requests are permitted, ensuring secure interaction with the API while accommodating a variety of client origins."
 
 ```CorsConfig.java
 /** 
@@ -89,7 +119,7 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/restaurant/**")
                 .allowedOrigins("*")
-                .allowedMethods("POST"); 
+                .allowedMethods("GET","POST"); 
     }
 }
 ```
