@@ -1,12 +1,17 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, Divider, Typography } from '@mui/material';
 
 
-const DataDisplay = ({ data }) => {
+const DataDisplay = ({ data,searchType}) => {
 
   return (
     <Card style={{ marginTop: '20px' }}>
+      
       <CardContent>
+        <Typography variant="h4" gutterBottom>
+          {searchType}
+        </Typography>
+        <Divider  style={{ marginBottom: '10px' }} />
         <Typography variant="h5" gutterBottom>
             Shop Name: {data.shopName}
         </Typography>
