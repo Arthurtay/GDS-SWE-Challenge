@@ -18,5 +18,7 @@ public interface RestaurantLocationDAO {
 	
     public List<RestaurantLocation> findByArea(String area);
     
+    public RestaurantLocation findSingleRestaurantByName(String shopName);
+    
     
 }

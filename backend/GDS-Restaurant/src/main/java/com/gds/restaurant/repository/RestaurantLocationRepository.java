@@ -1,8 +1,10 @@
 package com.gds.restaurant.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.gds.restaurant.entities.RestaurantLocation;
@@ -19,5 +21,7 @@ public interface RestaurantLocationRepository extends JpaRepository<RestaurantLo
 	
 	List<RestaurantLocation> findByArea(String area);
 	
+	@Query("SELECT res FROM RestaurantLocation res WHERE res.shopName LIKE %:shopName%")
+	Optional<RestaurantLocation> findByShopNameLike(String shopName);
 	
 }

@@ -53,7 +53,7 @@ public class RestaurantLocationServiceImpl implements RestaurantLocationService 
 		
 		return selectRandomRestaurant(listOfLocation);
 	}
-
+	
 
 	/**
 	 * Selects a random restaurant from the provided list of locations.
@@ -68,16 +68,38 @@ public class RestaurantLocationServiceImpl implements RestaurantLocationService 
 		    throw new NoDataException("There is no Data in the database for restaurant location");
 		}
 		
-	
 		int size = listOfLocation.size();
         Random random = new Random();
         int randomIndex = random.nextInt(size);
         
     	//Select location randomly based on index
         RestaurantLocation location = listOfLocation.get(randomIndex);
-        return  mapper.map(location, RestaurantLocationResDTO.class);
+        return mapper.map(location, RestaurantLocationResDTO.class);
+	}
+
+
+	
+	/**
+	 * Retrieves a specific restaurant location information based on it's name.
+	 *
+	 * @param shopName -  to retrieve the restaurant by shop name.
+	 * @return A randomly selected restaurant location response DTO.
+	 */
+	@Override
+	public RestaurantLocationResDTO getRestaurantLocationByName(String shopName) {
+		
+        RestaurantLocation location = restaurantDao.findSingleRestaurantByName(shopName);
+        return mapper.map(location, RestaurantLocationResDTO.class);
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 

@@ -5,7 +5,10 @@ package com.gds.restaurant.exception;
  */
 public class NoDataException extends RuntimeException  {
 	
-    public NoDataException() {
+
+	private static final long serialVersionUID = 1L;
+
+	public NoDataException() {
         super("The attribute or request is empty");
     }
 

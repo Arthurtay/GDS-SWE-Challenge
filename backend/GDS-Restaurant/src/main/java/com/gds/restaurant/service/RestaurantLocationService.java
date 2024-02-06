@@ -10,4 +10,6 @@ public interface RestaurantLocationService {
 	
 	public RestaurantLocationResDTO getRandomRestaurantLocation(RestaurantLocationReqDTO reqDto);
 	
+	public RestaurantLocationResDTO getRestaurantLocationByName(String shopName); 
+	
 }

@@ -1,11 +1,13 @@
 package com.gds.restaurant.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.gds.restaurant.entities.RestaurantLocation;
 import com.gds.restaurant.repository.RestaurantLocationRepository;
+
 
 
 /**
@@ -36,7 +38,14 @@ public class RestaurantLocationDAOImpl implements RestaurantLocationDAO{
 
 	@Override
 	public List<RestaurantLocation> findByArea(String area) {
-		// TODO Auto-generated method stub
 		return  restaurantLocationRepo.findByArea(area);
+	}
+
+	@Override
+	public RestaurantLocation findSingleRestaurantByName(String shopName) {
+		
+		  Optional<RestaurantLocation> restaurantOptional = restaurantLocationRepo.findByShopNameLike(shopName);	
+		  return restaurantOptional.orElse(new RestaurantLocation());
+		  
 	}
 }
