@@ -40,7 +40,7 @@ The API would be hosted in localhost port 9090.
 Controller for handling restaurant location-related requests.
 
 
-### Search Restaurant Endpoint
+### 1. Search Restaurant Endpoint
 
 #### `GET http://localhost:9090/restaurant/{name}`
 
@@ -69,7 +69,7 @@ Endpoint to retrieve a specific or Similar restaurant location based on the shop
 ```
 
 
-### Get Restaurant Endpoint
+### 2. Random Restaurant Endpoint
 
 #### `POST http://localhost:9090/restaurant/random`
 
