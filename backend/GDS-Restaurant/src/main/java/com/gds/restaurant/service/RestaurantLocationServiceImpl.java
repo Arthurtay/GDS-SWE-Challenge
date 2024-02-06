@@ -83,14 +83,13 @@ public class RestaurantLocationServiceImpl implements RestaurantLocationService 
 	 * Retrieves a specific restaurant location information based on it's name.
 	 *
 	 * @param shopName -  to retrieve the restaurant by shop name.
-	 * @return A randomly selected restaurant location response DTO.
+	 * @return A specific or similar selected restaurant location response DTO.
 	 */
 	@Override
 	public RestaurantLocationResDTO getRestaurantLocationByName(String shopName) {
 		
         RestaurantLocation location = restaurantDao.findSingleRestaurantByName(shopName);
         return mapper.map(location, RestaurantLocationResDTO.class);
-		
 	}
 	
 	
