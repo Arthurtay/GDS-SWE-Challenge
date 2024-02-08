@@ -22,7 +22,7 @@ The objective of this project is to develop a random restaurant finder, utilizin
 
 1. To run the API, run the following command for the already-built JAR:
 ```
-java -jar GDS-Restaurant-v2.jar
+java -jar GDS-Restaurant-v3.jar
 ```
 Alternatively, running the backend application as a Spring Boot application from your IDE is possible
 
