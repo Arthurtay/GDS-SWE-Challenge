@@ -1,4 +1,4 @@
-# GDS-SWE-Challenge
+# Random-Resturant-Finder
 
 ## Video Demo
 https://youtu.be/VS7InwGWH34
